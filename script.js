@@ -21,6 +21,7 @@ const app = {}
 
 // *Make API call
     // * figure out CORS authentication
+    // * this was a proxy server we used in the JS course - https://morning-coast-00478.herokuapp.com/
 
     // *with those results:
     // *for each: add movie title to dropdown (so it's pre-populated with list of movie titles on pageload)
