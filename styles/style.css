@@ -1,0 +1,13 @@
+header {
+  background-color: crimson;
+}
+header h1 {
+  font-size: 100px;
+}
+header ul li:nth-child(2) {
+  background-color: blue;
+}
+
+body {
+  background-color: #BADA55;
+}
