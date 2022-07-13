@@ -19,36 +19,51 @@
 
 // *Namespace
 const app = {}
+app.apiUrl = "https://ghibliapi.herokuapp.com/films"
+
 
 // *Define app init
 app.init = () => {
-    
+    console.log("working!");
 }
 
+
+
 // *Make API call
-        // *construct the url
-        // *parameters for our api key
+// *construct the url
+const url = new URL(app.apiUrl)
 
-        // *use fetch to get data
-        // *.then #1 - return json data
-        // *.then #2 - call method to populate dropdown
+// *use fetch to get data
+fetch(url)
 
-    // *with those results:
-    // *for each: add movie title to dropdown (so it's pre-populated with list of movie titles on pageload)
-        // *function to add it to the dropdown list
-        // *forEach to, for each movie...
-        // *...declare title variable to print to dropdown
-        // *append the movie title to the dropdown
+    // *.then #1 - return json data
+    .then((response) => {
+        // return json data
+        return response.json()
+    })
 
-    // *add event listener to dropdown menu change 
-        // !(OR submit button TBD)
+    // *.then #2 - call method to populate dropdown
+    .then((jsonData) => {
+        console.log(jsonData);
+    })
 
-        // *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+// *with those results:
+// *for each: add movie title to dropdown (so it's pre-populated with list of movie titles on pageload)
+// *function to add it to the dropdown list
+// *forEach to, for each movie...
+// *...declare title variable to print to dropdown
+// *append the movie title to the dropdown
 
-        // *run function to append movie info (poster, title, descrption)
-            // *declare variables for movie info
-            // *create innerhtml with matching css to be appended with variables for movie info
-            // *append that to the page
+// *add event listener to dropdown menu change 
+// !(OR submit button TBD)
+
+// *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+
+// *run function to append movie info (poster, title, descrption)
+// *declare variables for movie info
+// *create innerhtml with matching css to be appended with variables for movie info
+// *append that to the page
 
 
 // *call app.init
+app.init();
