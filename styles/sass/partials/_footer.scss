@@ -1,0 +1,13 @@
+footer {
+    width: 100vw;
+    background-color: $accentColor;
+    justify-content: center;
+    display: flex;
+    margin-top: 5%;
+
+    p {
+        font-size: .7rem;
+        // margin: 5px auto;
+        padding: 5px;
+    }
+}

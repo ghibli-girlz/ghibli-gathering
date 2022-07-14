@@ -1,17 +1,18 @@
 // MVP goals
-    // - pull list of movies from the api
-    // - make basic html and css
-    // - populate dropdown list with titles of movies
-    // - update html to include image, title, description of the selected movie
+// - pull list of movies from the api
+// - make basic html and css
+// - populate dropdown list with titles of movies
+// - update html to include image, title, description of the selected movie
 
 // Stretch goals
-    // - randomizer
-    // - filter by runtime / year / etc
-    // - include more info in the appended html(director, rotten tomatoes score, species(?), etc)
-    // - "developer's choice" our fav ghibli movies lol
-    // - error handling
-    //      - spinny animation if api call is slow to populate the dropdown
-    //      - placeholder text/img if api is missing data 
+// - randomizer
+// - filter by runtime / year / etc
+// - include more info in the appended html(director, rotten tomatoes score, species(?), etc)
+// - "developer's choice" our fav ghibli movies lol
+// - error handling
+//      - spinny animation if api call is slow to populate the dropdown
+//      - placeholder text/img if api is missing data 
+//  - ghibli fonts
 
 
 

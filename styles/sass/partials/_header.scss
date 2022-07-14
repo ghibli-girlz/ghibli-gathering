@@ -1,12 +1,33 @@
 header {
-    background-color: crimson;
 
-    h1 {
-        font-size: $primaryHeaderSize;
+    .wrapper {
+        display: flex;
     }
 
-    ul li:nth-child(2) {
-        background-color: blue;
+    // *Logo
+    img {
+        max-width: 30vw;
     }
 
+    // *Nav
+    nav {
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            // margin-top: 0;
+            // margin-left: 1px;
+            margin: 0 auto;
+            padding: 2%;
+            width: 40vw;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    }
 }

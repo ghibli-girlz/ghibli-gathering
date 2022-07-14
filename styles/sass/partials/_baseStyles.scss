@@ -1,0 +1,56 @@
+body {
+    background-image: url(./../../../assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: right;
+
+    background-color: $primaryBGColor;
+}
+
+// .backgroundImage {
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     z-index: -1;
+
+//     img {
+//         display: block;
+//     }
+// }
+
+button,
+a {
+    // font-family: "Playfair Display";
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    color: white;
+    padding: .6rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 300ms;
+
+    width: 10rem;
+
+    background-color: $primaryBGColor;
+    display: inline-block;
+    padding: .6rem;
+    text-decoration: none;
+    transition: 300ms;
+    margin-top: 30px;
+
+    &:visited {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            background-color: $accentColor;
+            color: white;
+        }
+    }
+}
