@@ -11,60 +11,107 @@
 // - "developer's choice" our fav ghibli movies lol
 // - error handling
 //      - spinny animation if api call is slow to populate the dropdown
-//      - placeholder text/img if api is missing data 
+//      - placeholder text/img if api is missing data
 //  - ghibli fonts
-
-
 
 // PSEUDO CODE -- note to sarah: i use the vs code extension "better comments" which makes comments have colors if they have prefixes like *, !, TODO - that's why it's there. i like to delete the * at the beginning of each comment "header" as i complete it, so the uncompleted ones are still in green.
 
 // *Namespace
-const app = {}
-app.apiUrl = "https://ghibliapi.herokuapp.com/films"
+const app = {};
 
+app.apiUrl = "https://ghibliapi.herokuapp.com/films";
+
+const dropdown = document.querySelector("#movieList");
+// ❓ why doesnt this work now? weird
 
 // *Define app init
 app.init = () => {
-    console.log("working!");
-}
+    app.getFilms();
+};
 
+// Make API call
+// construct the url
+const url = new URL(app.apiUrl);
 
+// !POPULATE DROPDOWN
+app.getFilms = function () {
+    // getting data from the api
+    const url = new URL(app.apiUrl);
+    fetch(url)
+        .then((apiData) => apiData.json())
+        .then((jsonData) => {
+            // console.log(jsonData);
+            // declare dropdown to be appended to later
+            const dropdown = document.querySelector("#movieList");
 
-// *Make API call
-// *construct the url
-const url = new URL(app.apiUrl)
+            // *forEach to, for each movie...
 
-// *use fetch to get data
-fetch(url)
+            jsonData.forEach((movie) => {
+                // *...declare title variable to print to dropdown
+                let movieTitle = movie.title;
 
-    // *.then #1 - return json data
-    .then((response) => {
-        // return json data
-        return response.json()
-    })
+                // *append the movie title to the dropdown
+                const htmlToAppend = document.createElement("option");
+                htmlToAppend.innerText = `${movieTitle}`;
+                htmlToAppend.value = `${movieTitle}`;
 
-    // *.then #2 - call method to populate dropdown
-    .then((jsonData) => {
-        console.log(jsonData);
-    })
+                dropdown.append(htmlToAppend);
 
-// *with those results:
-// *for each: add movie title to dropdown (so it's pre-populated with list of movie titles on pageload)
-// *function to add it to the dropdown list
-// *forEach to, for each movie...
-// *...declare title variable to print to dropdown
-// *append the movie title to the dropdown
+                // *Call event listener
+            });
 
-// *add event listener to dropdown menu change 
-// !(OR submit button TBD)
+            // !EVENT LISTENER
+            // *add event listener to dropdown menu change
+            document
+                .querySelector("#movieList")
+                .addEventListener("change", function () {
+                    const userSelection = this.value;
 
-// *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+                    // *Declaring variables for html containers
+                    const poster = document.querySelector(".posterContainer");
+
+                    const title = document.querySelector(".titleContainer");
+
+                    const description = document.querySelector(
+                        ".descriptionContainer"
+                    );
+
+                    // *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+                    poster.innerHTML = "";
+                    title.innerHTML = "";
+                    description.innerHTML = "";
+
+                    // *call moviePrint
+                    app.moviePrint(jsonData);
+                });
+        });
+};
+
+// !MOVIEPRINT
+app.moviePrint = (movieData) => {
+    const selection = document.querySelector("#movieList").value;
+    // console.log(selection);
+    movieData.forEach((movie) => {
+        if (movie.title === selection) {
+            // *Declare Poster
+            let moviePoster = movie.image;
+            console.log(moviePoster);
+
+            // *Declare Title
+            let movieTitle = movie.title;
+            console.log(movieTitle);
+
+            // *Declare Description
+            let movieDescription = movie.description;
+            console.log(movieDescription);
+
+            // *create innerhtml with matching css to be appended with variables for movie info
+            // *append that to the page
+        }
+    });
+};
 
 // *run function to append movie info (poster, title, descrption)
-// *declare variables for movie info
-// *create innerhtml with matching css to be appended with variables for movie info
-// *append that to the page
-
 
 // *call app.init
 app.init();

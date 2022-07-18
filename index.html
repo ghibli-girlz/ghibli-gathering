@@ -1,115 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The Great Ghibli Gathering</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sass starter file</title>
+        <!-- STYLESHEET -->
+        <link rel="stylesheet" href="./styles/style.css" />
 
-    <!-- STYLESHEET -->
-    <link rel="stylesheet" href="./styles/style.css">
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Defunct Josefin Sans
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Defunct Josefin Sans
         <link rel=“preconnect” href=“https://fonts.googleapis.com”>
     <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
     <link href=“https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap” rel=“stylesheet”> -->
 
+        <!-- JAVSCRIPT -->
+        <script src="./script.js"></script>
+    </head>
 
-    <!-- JAVSCRIPT -->
-    <script src="./script.js"></script>
-</head>
+    <body>
+        <!-- !HEADER -->
+        <header>
+            <div class="wrapper">
+                <!-- *Logo -->
+                <img src="./assets/logo.png" alt="The Studio Ghibli logo." />
 
-<body>
+                <!-- *Nav -->
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#"> Home </a>
+                        </li>
 
-    <!-- !HEADER -->
-    <header>
+                        <li>
+                            <a href=""> Quiz </a>
+                        </li>
 
-        <div class="wrapper">
+                        <li>
+                            <a href=""> Randomizer </a>
+                        </li>
+                    </ul>
+                </nav>
 
-            <!-- *Logo -->
-            <img src="./assets/logo.png" alt="The Studio Ghibli logo.">
+                <!-- Slide Out Menu -->
+                <input id="openSideMenu" type="checkbox" />
+                <label for="openSideMenu" class="openSideMenuButton">
+                    <img src="./assets/placeholder.png" alt="Menu Button" />
+                </label>
 
-            <!-- *Nav -->
-            <nav>
-                <ul>
+                <!-- Slide Out Nav Content -->
+                <div class="slideOutNav">
+                    <div class="buttonWrapper">
+                        <label for="openSideMenu">X</label>
+                    </div>
 
-                    <li>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="">
-                            Quiz
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="">
-                            Randomizer
-                        </a>
-                    </li>
-
-                </ul>
-            </nav>
-        </div><!-- END wrapper -->
-
-        <div class="wrapper">
-
-
-        </div>
-
-    </header>
-
-    <!-- !MAIN -->
-    <main>
-
-        <div class="wrapper mainContainer">
-
-            <h1>
-                The Great Ghibli Gathering
-            </h1>
-
-            <div class="wrapper dropdownContainer">
-                <select name="movieList" id="movieList">
-                    <option value="first">testing</option>
-                </select>
-            </div><!-- END wrapper -->
-
-
-            <div class="posterContainer">
-                <img src="./assets/posterPlaceholder.jpg" alt="Princess Mononoke poster.">
+                    <!-- Menu Content -->
+                    <nav>test</nav>
+                </div>
             </div>
+            <!-- END wrapper -->
 
-            <h2>
-                Princess Mononoke
-            </h2>
+            <div class="wrapper"></div>
+        </header>
 
-            <p>Ashitaka, a prince of the disappearing Ainu tribe, is cursed by a demonized boar god and must journey
-                to the west to
-                find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest,
-                and Lady Eboshi, who
-                is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.</p>
+        <!-- !MAIN -->
+        <main>
+            <div class="wrapper mainContainer">
+                <h1>The Great Ghibli Gathering</h1>
 
-        </div><!-- END wrapper mainContainer-->
+                <div class="wrapper dropdownContainer">
+                    <select name="movieList" id="movieList" class="movieList">
+                        <!-- <option value="first">testing</option> -->
+                    </select>
+                </div>
+                <!-- END wrapper -->
 
-    </main>
+                <div class="posterContainer">
+                    <img
+                        src="./assets/posterPlaceholder.jpg"
+                        alt="Princess Mononoke poster."
+                    />
+                </div>
 
-    <!-- <div class="backgroundImage">
+                <div class="titleContainer">
+                    <h2>Princess Mononoke</h2>
+                </div>
+
+                <div class="descriptionContainer">
+                    <p>
+                        Ashitaka, a prince of the disappearing Ainu tribe, is
+                        cursed by a demonized boar god and must journey to the
+                        west to find a cure. Along the way, he encounters San, a
+                        young human woman fighting to protect the forest, and
+                        Lady Eboshi, who is trying to destroy it. Ashitaka must
+                        find a way to bring balance to this conflict.
+                    </p>
+                </div>
+            </div>
+            <!-- END wrapper mainContainer-->
+        </main>
+
+        <!-- <div class="backgroundImage">
         <img src="./assets/background.png" alt="">
     </div> -->
 
-    <!-- !FOOTER -->
-    <footer>
-        <p>Created at Juno College :~)</p>
-    </footer>
-
-</body>
-
+        <!-- !FOOTER -->
+        <footer>
+            <p>Created at Juno College :~)</p>
+        </footer>
+    </body>
 </html>

@@ -4,17 +4,14 @@ main {
         background-color: $accentColor;
         border-radius: 20px;
         border: solid 3px $primaryBGColor;
-    }
 
-    .wrapper {
+        width: 40%;
+        max-width: 700px;
+
         display: flex;
         flex-direction: column;
         margin-top: 2%;
         margin-left: 4%;
-
-
-        width: 40%;
-        max-width: 700px;
     }
 
     h1 {

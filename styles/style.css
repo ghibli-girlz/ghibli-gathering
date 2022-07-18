@@ -270,6 +270,14 @@ a:visited:focus {
   color: white;
 }
 
+@media (max-width: 1000px) {
+  .mainContainer {
+    color: green;
+  }
+  h1 {
+    color: red;
+  }
+}
 header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,13 +303,28 @@ header nav li {
 header nav a {
   text-decoration: none;
 }
+header .slideOutNav {
+  position: fixed;
+  top: 0;
+  left: -999px;
+  height: 100vh;
+  width: 100%;
+  max-width: 506px;
+  padding: 35px 50px;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+}
+header .openSideMenuButton img {
+  width: 50px;
+  height: 50px;
+}
 
 main .mainContainer {
   background-color: #231f20;
   border-radius: 20px;
   border: solid 3px #393939;
-}
-main .wrapper {
+  width: 40%;
+  max-width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -311,8 +334,6 @@ main .wrapper {
           flex-direction: column;
   margin-top: 2%;
   margin-left: 4%;
-  width: 40%;
-  max-width: 700px;
 }
 main h1 {
   text-align: center;
