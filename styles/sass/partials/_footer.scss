@@ -1,9 +1,12 @@
 footer {
+    // position: fixed;
+    // left: 0;
+    // bottom: 0;
     width: 100vw;
     background-color: $accentColor;
     justify-content: center;
     display: flex;
-    margin-top: 5%;
+    margin-top: 10%;
 
     p {
         font-size: .7rem;

@@ -26,7 +26,7 @@ const dropdown = document.querySelector("#movieList");
 
 // *Define app init
 app.init = () => {
-	app.getFilms();
+    app.getFilms();
 };
 
 // Make API call
@@ -35,102 +35,95 @@ const url = new URL(app.apiUrl);
 
 // !POPULATE DROPDOWN
 app.getFilms = function () {
-	// getting data from the api
-	const url = new URL(app.apiUrl);
-	fetch(url)
-		.then((apiData) => apiData.json())
-		.then((jsonData) => {
-			// console.log(jsonData);
-			// declare dropdown to be appended to later
-			const dropdown = document.querySelector("#movieList");
+    // getting data from the api
+    const url = new URL(app.apiUrl);
+    fetch(url)
+        .then((apiData) => apiData.json())
+        .then((jsonData) => {
+            // console.log(jsonData);
+            // declare dropdown to be appended to later
+            const dropdown = document.querySelector("#movieList");
 
-			// *forEach to, for each movie...
+            // *forEach to, for each movie...
 
-			jsonData.forEach((movie) => {
-				// *...declare title variable to print to dropdown
-				let movieTitle = movie.title;
+            jsonData.forEach((movie) => {
+                // *...declare title variable to print to dropdown
+                let movieTitle = movie.title;
 
-				// *append the movie title to the dropdown
-				const htmlToAppend = document.createElement("option");
-				htmlToAppend.innerText = `${movieTitle}`;
-				htmlToAppend.value = `${movieTitle}`;
+                // *append the movie title to the dropdown
+                const htmlToAppend = document.createElement("option");
+                htmlToAppend.innerText = `${movieTitle}`;
+                htmlToAppend.value = `${movieTitle}`;
 
-				dropdown.append(htmlToAppend);
+                dropdown.append(htmlToAppend);
 
-				// *Call event listener
-			});
+                // *Call event listener
+            });
 
-			// !EVENT LISTENER
-			// *add event listener to dropdown menu change
-			document
-				.querySelector("#movieList")
-				.addEventListener("change", function () {
-					const userSelection = this.value;
+            // !EVENT LISTENER
+            // *add event listener to dropdown menu change
+            document
+                .querySelector("#movieList")
+                .addEventListener("change", function () {
+                    const userSelection = this.value;
 
-					// *Declaring variables for html containers
-					const poster = document.querySelector(".posterContainer");
+                    // *Declaring variables for html containers
+                    const poster = document.querySelector(".posterContainer");
 
-					const title = document.querySelector(".titleContainer");
+                    const title = document.querySelector(".titleContainer");
 
-					const description = document.querySelector(
-						".descriptionContainer"
-					);
+                    const description = document.querySelector(
+                        ".descriptionContainer"
+                    );
 
-					// *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
-					poster.innerHTML = "";
-					title.innerHTML = "";
-					description.innerHTML = "";
+                    // *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+                    poster.innerHTML = "";
+                    title.innerHTML = "";
+                    description.innerHTML = "";
 
-					// *call moviePrint
-					app.moviePrint(jsonData);
-				});
-		});
+                    // *call moviePrint
+                    app.moviePrint(jsonData);
+                });
+        });
 };
 
 // !MOVIEPRINT
 app.moviePrint = (movieData) => {
-	const selection = document.querySelector("#movieList").value;
-	// console.log(selection);
-	// *for each on the database to make it append ONLY IF the database entry's title matches the selected title
-	movieData.forEach((movie) => {
-		if (movie.title === selection) {
-			// *Declare Poster
-			let moviePoster = movie.image;
-			console.log(moviePoster);
+    const selection = document.querySelector("#movieList").value;
+    // console.log(selection);
+    movieData.forEach((movie) => {
+        if (movie.title === selection) {
+            // *Declare Poster
+            let moviePoster = movie.image;
+            console.log(moviePoster);
 
-			// *Declare Title
-			let movieTitle = movie.title;
-			console.log(movieTitle);
+            // *Declare Title
+            let movieTitle = movie.title;
+            console.log(movieTitle);
 
-			// *Declare Description
-			let movieDescription = movie.description;
-			console.log(movieDescription);
+            // *Declare Description
+            let movieDescription = movie.description;
+            console.log(movieDescription);
 
-			// *create innerhtml with matching css to be appended with variables for movie info
-			const movieInfoToAppend = `<div class="posterContainer">
-						<img
-							src="${moviePoster}"
-						/>
-					</div>
-					<div class="titleContainer">
-						<h2>${movieTitle}</h2>
-					</div>
-					<div class="descriptionContainer">
-						<p>
-							${movieDescription}
-						</p>
-					</div>
-                `;
+            // *create innerhtml with matching css to be appended with variables for movie info
+            const poster = document.querySelector(".posterContainer");
 
-			// *append that to the page
-			// select the div "appendContainer"
-			const appendContainer = document.querySelector(".appendContainer");
+            const title = document.querySelector(".titleContainer");
 
-			// append the html to that container
-			appendContainer.append(movieInfoToAppend);
-		}
-	});
+            const description = document.querySelector(
+                ".descriptionContainer"
+            );
+
+            poster.innerHTML = `<img src="${moviePoster}" alt="The poster for: ${movieTitle}">`
+            title.innerHTML = `<h2>${movieTitle}<h2>`
+            description.innerHTML = `<p>${movieDescription}</p>`
+
+            // *append that to the page
+        }
+    });
 };
+
+// *run function to append movie info (poster, title, descrption)
 
 // *call app.init
 app.init();

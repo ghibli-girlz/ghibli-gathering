@@ -3,7 +3,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    background-position: right;
+    background-position: center;
 
     background-color: $primaryBGColor;
 }
@@ -22,27 +22,25 @@ body {
 button,
 a {
     // font-family: "Playfair Display";
-    font-weight: bold;
-    font-style: italic;
+    // font-weight: bold;
+    // font-style: italic;
     font-size: 1rem;
     text-align: center;
     line-height: 1.6rem;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
     color: white;
-    padding: 0.6rem;
+    // padding: 0.6rem;
     border-radius: 20px;
     text-decoration: none;
     transition: 300ms;
-
-    width: 10rem;
-
+    width: 6rem;
     background-color: $primaryBGColor;
     display: inline-block;
-    padding: 0.6rem;
+    padding: 10px 25px;
     text-decoration: none;
     transition: 300ms;
-    margin-top: 30px;
+    margin-top: 40px;
 
     &:visited {
         text-decoration: none;
