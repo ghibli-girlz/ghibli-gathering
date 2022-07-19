@@ -53,6 +53,8 @@ main {
 
         img {
             max-width: 50%;
+            border-radius: 20px;
+            border: solid 3px $accentColor;
             // max-height: 100%;
         }
     }
