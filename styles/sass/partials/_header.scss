@@ -1,12 +1,65 @@
 header {
-    background-color: crimson;
 
-    h1 {
-        font-size: $primaryHeaderSize;
+    .wrapper {
+        display: flex;
     }
 
-    ul li:nth-child(2) {
-        background-color: blue;
+    .logo {
+    width: 17%;
+    margin-left: 60px;
+    margin-top: 30px;
+    margin-right: 40px;
     }
 
+    // *Nav
+    nav {
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            // margin-top: 0;
+            // margin-left: 1px;
+            margin: 0 auto;
+            padding: 2%;
+            // width: 50vw;
+            height: 10vh;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            width: 100%;
+        }
+
+    }
+
+    // //*Slide Out Nav
+    .slideOutNav {
+        position: fixed;
+        top: 0;
+        left: -999px;
+        height: 100vh;
+        width: 100%;
+        max-width: 506px;
+        padding: 35px 50px;
+        transition: 0.75s;
+    }
+
+    .openSideMenuButton img {
+        width: 50px;
+        height: 50px;
+    }
+
+    
+
+    // input[type=checkbox] {
+    //     opacity: 0;
+    //     position: absolute;
+
+    //     &:checked~.slideOutNav {
+    //         left: 0;
+    //     }
+    // }
 }
