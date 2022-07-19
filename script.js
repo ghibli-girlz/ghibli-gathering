@@ -106,6 +106,18 @@ app.moviePrint = (movieData) => {
             console.log(movieDescription);
 
             // *create innerhtml with matching css to be appended with variables for movie info
+            const poster = document.querySelector(".posterContainer");
+
+            const title = document.querySelector(".titleContainer");
+
+            const description = document.querySelector(
+                ".descriptionContainer"
+            );
+
+            poster.innerHTML = `<img src="${moviePoster}" alt="The poster for: ${movieTitle}">`
+            title.innerHTML = `<h2>${movieTitle}<h2>`
+            description.innerHTML = `<p>${movieDescription}</p>`
+
             // *append that to the page
         }
     });
