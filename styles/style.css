@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-header {
-  background-color: crimson;
-}
-header h1 {
-  font-size: 100px;
-}
-header ul li:nth-child(2) {
-  background-color: blue;
-}
 
-body {
-  background-color: #BADA55;
-=======
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -281,94 +268,14 @@ a:visited:focus {
   color: white;
 }
 
-@media (max-width: 1200px) {
-  .hamburgerMenu {
-    display: none;
-    background-color: none;
-  }
-  .sideNav {
-    display: none;
-  }
-}
-@media (max-width: 1050px) {
-  .hamburgerMenu {
-    display: block;
-    margin-right: 20px;
-    border: none;
-    background-color: transparent;
-  }
-  .sideNav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: -100%;
-    background-color: #231f20;
-    overflow-x: hidden;
-    padding-top: 60px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .sideNav.active {
-    left: 0;
-    width: 250px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .sideNav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #231f20;
-    display: block;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-  }
-  .sideNav a:hover {
-    color: #393939;
-  }
-  .sideNav .closeBtn {
-    border: none;
-    color: white;
-    background-color: #231f20;
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 40px;
-    margin-left: 50px;
-    cursor: pointer;
-  }
-}
 header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 header .logo {
-  width: 17%;
-  margin-left: 60px;
-  margin-top: 30px;
-  margin-right: 40px;
-}
-header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  margin: 0 auto;
-  padding: 2%;
-  height: 10vh;
-}
-header nav li {
-  list-style: none;
-}
-header nav a {
-  text-decoration: none;
-  width: 100%;
+  width: 200px;
+  margin: 30px auto;
 }
 header .slideOutNav {
   position: fixed;
@@ -399,8 +306,8 @@ main .mainContainer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 3%;
-  margin-left: 4%;
+  margin-top: 30px;
+  margin-left: 50px;
 }
 main h1 {
   text-align: center;
@@ -473,5 +380,11 @@ footer {
 footer p {
   font-size: 0.7rem;
   padding: 5px;
->>>>>>> sarah-branch
+}
+
+@media (max-width: 1000px) {
+  main .mainContainer {
+    width: 90vw;
+    margin: 0 auto;
+  }
 }

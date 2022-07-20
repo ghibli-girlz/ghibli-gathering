@@ -5,35 +5,33 @@ header {
     }
 
     .logo {
-    width: 17%;
-    margin-left: 60px;
-    margin-top: 30px;
-    margin-right: 40px;
+    width: 200px;
+    margin: 30px auto;
     }
 
     // *Nav
-    nav {
-        ul {
-            display: flex;
-            justify-content: space-evenly;
-            // margin-top: 0;
-            // margin-left: 1px;
-            margin: 0 auto;
-            padding: 2%;
-            // width: 50vw;
-            height: 10vh;
-        }
+    // nav {
+    //     ul {
+    //         display: flex;
+    //         justify-content: space-evenly;
+    //         // margin-top: 0;
+    //         // margin-left: 1px;
+    //         margin: 0 auto;
+    //         padding: 2%;
+    //         // width: 50vw;
+    //         height: 10vh;
+    //     }
 
-        li {
-            list-style: none;
-        }
+    //     li {
+    //         list-style: none;
+    //     }
 
-        a {
-            text-decoration: none;
-            width: 100%;
-        }
+    //     a {
+    //         text-decoration: none;
+    //         width: 100%;
+    //     }
 
-    }
+    // }
 
     // //*Slide Out Nav
     .slideOutNav {
