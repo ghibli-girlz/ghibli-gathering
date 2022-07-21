@@ -273,7 +273,8 @@ a:visited:focus {
 @media (max-width: 1000px) {
   main .mainContainer {
     width: 90vw;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 header .wrapper {
