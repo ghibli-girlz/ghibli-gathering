@@ -232,7 +232,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  background-position: 60% 30%;
+  background-position: 55% 30%;
   background-color: #393939;
 }
 body .raindrops {
@@ -266,7 +266,7 @@ a:visited {
 button:visited:hover, button:visited:focus,
 a:visited:hover,
 a:visited:focus {
-  background-color: #231f20;
+  background-color: #262626;
   color: white;
 }
 
@@ -313,11 +313,11 @@ header .logo-final {
 }
 
 main .mainContainer {
-  background-color: #231f20;
+  background-color: #262626;
   border-radius: 20px;
   border: solid 3px #393939;
-  max-width: 700px;
-  min-height: 1000px;
+  max-width: 750px;
+  min-height: 1065px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -350,7 +350,7 @@ main h1 {
   text-transform: uppercase;
   font-weight: 600;
 }
-main .dropdownContainer {
+main .selectionContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,8 +367,8 @@ main .dropdownContainer {
       -ms-flex-align: center;
           align-items: center;
 }
-main .dropdownContainer select {
-  color: #231f20;
+main .selectionContainer select {
+  color: #262626;
   width: 100%;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -381,13 +381,16 @@ main .dropdownContainer select {
   background-repeat: no-repeat;
   background-position: right 2px top 2.5px;
 }
-main .dropdownContainer .randomButton {
+main .selectionContainer option {
+  color: #262626;
+}
+main .selectionContainer .randomButton {
   font-family: "Montserrat";
-  width: 80%;
+  width: 100%;
   height: 35%;
   background-color: rgb(228, 211, 156);
   border: 2px solid #393939;
-  color: #231f20;
+  color: #262626;
   border-radius: 5px;
   cursor: pointer;
   -webkit-box-align: center;
@@ -410,12 +413,8 @@ main .posterContainer {
 main .posterContainer img {
   max-width: 50%;
   border-radius: 20px;
-  border: solid 3px #231f20;
+  border: solid 3px #262626;
   height: 500px;
-}
-main h2,
-main p {
-  padding: 0 10%;
 }
 main h2 {
   padding-top: 3%;
@@ -424,12 +423,13 @@ main h2 {
   text-align: center;
 }
 main p {
+  padding: 0 10%;
   padding-bottom: 5%;
 }
 
 footer {
   width: 100vw;
-  background-color: #231f20;
+  background-color: #262626;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

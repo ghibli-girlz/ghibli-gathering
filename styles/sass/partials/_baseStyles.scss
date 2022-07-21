@@ -1,14 +1,14 @@
 body {
-    background-image: url(https://wallpaperaccess.com/full/440241.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    background-position: 60% 30%;
-    background-color: $primaryBGColor;
+	background-image: url(https://wallpaperaccess.com/full/440241.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	background-position: 55% 30%;
+	background-color: $primaryBGColor;
 
-    .raindrops {
-        z-index: 10000;
-    }
+	.raindrops {
+		z-index: 10000;
+	}
 }
 
 // .backgroundImage {
@@ -24,34 +24,34 @@ body {
 
 button,
 a {
-    // font-family: "Playfair Display";
-    // font-weight: bold;
-    // font-style: italic;
-    font-size: 1rem;
-    text-align: center;
-    line-height: 1.6rem;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-    color: white;
-    // padding: 0.6rem;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: 300ms;
-    width: 6rem;
-    background-color: $primaryBGColor;
-    display: inline-block;
-    padding: 10px 25px;
-    text-decoration: none;
-    transition: 300ms;
-    margin-top: 40px;
+	// font-family: "Playfair Display";
+	// font-weight: bold;
+	// font-style: italic;
+	font-size: 1rem;
+	text-align: center;
+	line-height: 1.6rem;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+	color: white;
+	// padding: 0.6rem;
+	border-radius: 20px;
+	text-decoration: none;
+	transition: 300ms;
+	width: 6rem;
+	background-color: $primaryBGColor;
+	display: inline-block;
+	padding: 10px 25px;
+	text-decoration: none;
+	transition: 300ms;
+	margin-top: 40px;
 
-    &:visited {
-        text-decoration: none;
+	&:visited {
+		text-decoration: none;
 
-        &:hover,
-        &:focus {
-            background-color: $accentColor;
-            color: white;
-        }
-    }
+		&:hover,
+		&:focus {
+			background-color: $accentColor;
+			color: white;
+		}
+	}
 }
