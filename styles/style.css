@@ -273,8 +273,7 @@ a:visited:focus {
 @media (max-width: 1000px) {
   main .mainContainer {
     width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto !important;
   }
 }
 header .wrapper {
@@ -318,6 +317,7 @@ main .mainContainer {
   border-radius: 20px;
   border: solid 3px #393939;
   max-width: 700px;
+  min-height: 1000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,8 +327,8 @@ main .mainContainer {
           flex-direction: column;
   margin-top: 30px;
   margin-left: 50px;
-  -webkit-animation: slide-down 5s forwards;
-          animation: slide-down 5s forwards;
+  -webkit-animation: slide-down 1s forwards;
+          animation: slide-down 1s forwards;
 }
 @keyframes slide-down {
   from {
@@ -411,6 +411,7 @@ main .posterContainer img {
   max-width: 50%;
   border-radius: 20px;
   border: solid 3px #231f20;
+  height: 500px;
 }
 main h2,
 main p {
