@@ -6,16 +6,12 @@ main {
 
 		// width: 45%;
 		max-width: 750px;
-		min-height: 1065px;
+		min-height: 1075px;
 		display: flex;
 		flex-direction: column;
 		margin-top: 30px;
 		margin-left: 50px;
 		animation: slide-down 1s forwards;
-
-		p {
-			// font-size: 0.95rem;
-		}
 	}
 
 	@keyframes slide-down {
@@ -67,7 +63,7 @@ main {
 		.randomButton {
 			font-family: "Montserrat";
 			width: calc(100% + 5px);
-			// width: 100%;
+			// width: 40%;
 			height: 35%;
 			background-color: rgb(228, 211, 156);
 			border: 2px solid $primaryBGColor;
@@ -75,7 +71,7 @@ main {
 			border-radius: 5px;
 			cursor: pointer;
 			align-items: center;
-			padding: 0;
+			padding: 1%;
 			margin-top: 20px;
 		}
 	}
