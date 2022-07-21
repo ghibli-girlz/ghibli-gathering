@@ -386,7 +386,7 @@ main .selectionContainer option {
 }
 main .selectionContainer .randomButton {
   font-family: "Montserrat";
-  width: 100%;
+  width: calc(100% + 5px);
   height: 35%;
   background-color: rgb(228, 211, 156);
   border: 2px solid #393939;
