@@ -1,4 +1,3 @@
-
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -229,12 +228,15 @@ template {
 }
 
 body {
-  background-image: url(./../../../assets/background.png);
+  background-image: url(https://wallpaperaccess.com/full/440241.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  background-position: center;
+  background-position: 60% 30%;
   background-color: #393939;
+}
+body .raindrops {
+  z-index: 10000;
 }
 
 button,
@@ -268,36 +270,53 @@ a:visited:focus {
   color: white;
 }
 
+@media (max-width: 1000px) {
+  main .mainContainer {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-header .logo {
-  width: 200px;
+header .logo-final {
+  width: 500px;
   margin: 30px auto;
+  -webkit-animation: slide-down 2s forwards;
+          animation: slide-down 2s forwards;
 }
-header .slideOutNav {
-  position: fixed;
-  top: 0;
-  left: -999px;
-  height: 100vh;
-  width: 100%;
-  max-width: 506px;
-  padding: 35px 50px;
-  -webkit-transition: 0.75s;
-  transition: 0.75s;
+@-webkit-keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
 }
-header .openSideMenuButton img {
-  width: 50px;
-  height: 50px;
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 main .mainContainer {
   background-color: #231f20;
   border-radius: 20px;
   border: solid 3px #393939;
-  width: 45%;
   max-width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -308,6 +327,20 @@ main .mainContainer {
           flex-direction: column;
   margin-top: 30px;
   margin-left: 50px;
+  -webkit-animation: slide-down 5s forwards;
+          animation: slide-down 5s forwards;
+}
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 main h1 {
   text-align: center;
@@ -318,8 +351,21 @@ main h1 {
   font-weight: 600;
 }
 main .dropdownContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 60%;
   margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 main .dropdownContainer select {
   color: #231f20;
@@ -334,7 +380,21 @@ main .dropdownContainer select {
   background-image: url(../../../assets/down-arrow.svg);
   background-repeat: no-repeat;
   background-position: right 2px top 2.5px;
-  margin-bottom: 18px;
+}
+main .dropdownContainer .randomButton {
+  font-family: "Montserrat";
+  width: 80%;
+  height: 35%;
+  background-color: rgb(228, 211, 156);
+  border: 2px solid #393939;
+  color: #231f20;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin-top: 20px;
 }
 main .posterContainer {
   width: 100%;
@@ -380,11 +440,4 @@ footer {
 footer p {
   font-size: 0.7rem;
   padding: 5px;
-}
-
-@media (max-width: 1000px) {
-  main .mainContainer {
-    width: 90vw;
-    margin: 0 auto;
-  }
 }

@@ -57,10 +57,16 @@ app.getFilms = function () {
 
                 dropdown.append(htmlToAppend);
 
-                // *Call event listener
+
             });
 
-            // !EVENT LISTENER
+            const randomButton = document.querySelector("#randomButton")
+            randomButton.addEventListener("click", function (event) {
+                event.preventDefault()
+                app.printRandom(jsonData);
+            });
+
+            // !EVENT LISTENER DROPDOWN
             // *add event listener to dropdown menu change
             document
                 .querySelector("#movieList")
@@ -84,8 +90,39 @@ app.getFilms = function () {
                     // *call moviePrint
                     app.moviePrint(jsonData);
                 });
+
+
         });
 };
+
+// !RANDOMPRINT
+
+app.printRandom = (movieData) => {
+    const randomSelectedMovie = movieData[Math.floor(Math.random() * movieData.length)];
+
+    // *Declaring variables for html containers
+    const poster = document.querySelector(".posterContainer");
+
+    const title = document.querySelector(".titleContainer");
+
+    const description = document.querySelector(".descriptionContainer");
+
+    // *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+    poster.innerHTML = "";
+    title.innerHTML = "";
+    description.innerHTML = "";
+
+    // defining randomizer variables
+    let moviePoster = randomSelectedMovie.image;
+    let movieTitle = randomSelectedMovie.title;
+    let movieDescription = randomSelectedMovie.description;
+
+    // printing randomizer to the page
+    poster.innerHTML = `<img src="${moviePoster}" alt="The poster for: ${movieTitle}">`
+    title.innerHTML = `<h2>${movieTitle}<h2>`
+    description.innerHTML = `<p>${movieDescription}</p>`
+
+}
 
 // !MOVIEPRINT
 app.moviePrint = (movieData) => {
