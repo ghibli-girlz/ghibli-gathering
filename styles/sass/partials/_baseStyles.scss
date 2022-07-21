@@ -1,11 +1,14 @@
 body {
-    background-image: url(./../../../assets/background.png);
+    background-image: url(https://wallpaperaccess.com/full/440241.png);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
-    background-position: center;
-
+    background-position: 60% 30%;
     background-color: $primaryBGColor;
+
+    .raindrops {
+        z-index: 10000;
+    }
 }
 
 // .backgroundImage {
