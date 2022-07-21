@@ -228,12 +228,15 @@ template {
 }
 
 body {
-  background-image: url(./../../../assets/background.png);
+  background-image: url(https://wallpaperaccess.com/full/440241.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  background-position: center;
+  background-position: 60% 30%;
   background-color: #393939;
+}
+body .raindrops {
+  z-index: 10000;
 }
 
 button,
@@ -313,7 +316,6 @@ main .mainContainer {
   background-color: #231f20;
   border-radius: 20px;
   border: solid 3px #393939;
-  width: 45%;
   max-width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -348,8 +350,21 @@ main h1 {
   font-weight: 600;
 }
 main .dropdownContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 60%;
   margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 main .dropdownContainer select {
   color: #231f20;
@@ -364,7 +379,21 @@ main .dropdownContainer select {
   background-image: url(../../../assets/down-arrow.svg);
   background-repeat: no-repeat;
   background-position: right 2px top 2.5px;
-  margin-bottom: 18px;
+}
+main .dropdownContainer .randomButton {
+  font-family: "Montserrat";
+  width: 80%;
+  height: 35%;
+  background-color: rgb(228, 211, 156);
+  border: 2px solid #393939;
+  color: #231f20;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin-top: 20px;
 }
 main .posterContainer {
   width: 100%;
