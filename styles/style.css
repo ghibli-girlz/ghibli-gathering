@@ -228,15 +228,12 @@ template {
 }
 
 body {
-  background-image: url(https://wallpaperaccess.com/full/440241.png);
+  background-image: url(../assets/purpletotoro-v2.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
   background-position: 55% 30%;
   background-color: #393939;
-}
-body .raindrops {
-  z-index: 10000;
 }
 
 button,
@@ -274,6 +271,11 @@ a:visited:focus {
   main .mainContainer {
     width: 90vw;
     margin: 0 auto !important;
+  }
+}
+@media (max-width: 500px) {
+  header .logo-final {
+    max-width: 100vw;
   }
 }
 header .wrapper {
@@ -327,6 +329,7 @@ main .mainContainer {
           flex-direction: column;
   margin-top: 30px;
   margin-left: 50px;
+  z-index: 30;
   -webkit-animation: slide-down 1s forwards;
           animation: slide-down 1s forwards;
 }
@@ -411,7 +414,7 @@ main .posterContainer {
   margin-top: 3%;
 }
 main .posterContainer img {
-  max-width: 50%;
+  max-width: 90%;
   border-radius: 20px;
   border: solid 3px #262626;
   height: 500px;
@@ -428,7 +431,7 @@ main p {
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   background-color: #262626;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
