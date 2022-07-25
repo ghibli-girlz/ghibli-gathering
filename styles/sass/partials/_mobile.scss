@@ -6,3 +6,9 @@
         margin: 0 auto !important;
     }
 }
+
+@media (max-width: 500px) {
+    header .logo-final {
+        max-width: 100vw;
+    }
+}
