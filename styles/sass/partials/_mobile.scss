@@ -6,3 +6,10 @@
         margin: 0 auto !important;
     }
 }
+
+@media (max-width: 500px) {
+    main {
+        width: 100vw;
+        margin: 0 auto !important;
+    }
+}

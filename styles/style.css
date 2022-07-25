@@ -228,7 +228,7 @@ template {
 }
 
 body {
-  background-image: url(https://wallpaperaccess.com/full/440241.png);
+  background-image: url(../../../assets/purpletotoro-v2.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -236,37 +236,6 @@ body {
   background-color: #393939;
   position: relative;
   z-index: -10;
-}
-body .raindrops {
-  position: absolute;
-  left: 422px;
-  z-index: 0;
-  -webkit-animation: slide-down 3s forwards;
-          animation: slide-down 3s forwards;
-}
-@-webkit-keyframes slide-down {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
 }
 
 button,
@@ -306,6 +275,12 @@ a:visited:focus {
     margin: 0 auto !important;
   }
 }
+@media (max-width: 500px) {
+  main {
+    width: 100vw;
+    margin: 0 auto !important;
+  }
+}
 header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,6 +291,18 @@ header .logo-final {
   margin: 30px auto;
   -webkit-animation: slide-down 2s forwards;
           animation: slide-down 2s forwards;
+}
+@-webkit-keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 @keyframes slide-down {
   from {
@@ -446,7 +433,7 @@ main p {
 }
 
 footer {
-  width: 100vw;
+  width: 100%;
   background-color: #262626;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

@@ -1,5 +1,6 @@
 body {
-	background-image: url(https://wallpaperaccess.com/full/440241.png);
+	// background-image: url(https://wallpaperaccess.com/full/440241.png);
+	background-image: url(../../../assets/purpletotoro-v2.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 100vh;
@@ -8,24 +9,24 @@ body {
 	position: relative;
 	z-index: -10;
 
-	.raindrops {
-		position: absolute;
-		left: 422px;
-		z-index: 0;
-		animation: slide-down 3s forwards;
-	}
+	// .raindrops {
+	// 	position: absolute;
+	// 	left: 422px;
+	// 	z-index: 0;
+	// 	animation: slide-down 3s forwards;
+	// }
 
-	@keyframes slide-down {
-		from {
-			opacity: 0;
-			transform: translateY(-50px);
-		}
+	// @keyframes slide-down {
+	// 	from {
+	// 		opacity: 0;
+	// 		transform: translateY(-50px);
+	// 	}
 
-		to {
-			opacity: 1;
-			transform: none;
-		}
-	}
+	// 	to {
+	// 		opacity: 1;
+	// 		transform: none;
+	// 	}
+	// }
 }
 
 // .backgroundImage {
