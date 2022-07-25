@@ -1,11 +1,9 @@
 main {
-
 	.mainContainer {
 		background-color: $accentColor;
 		border-radius: 20px;
 		border: solid 3px $primaryBGColor;
 
-		// width: 45%;
 		max-width: 750px;
 		min-height: 1075px;
 		display: flex;
@@ -65,7 +63,6 @@ main {
 		.randomButton {
 			font-family: "Montserrat";
 			width: calc(100% + 5px);
-			// width: 40%;
 			height: 35%;
 			background-color: rgb(228, 211, 156);
 			border: 2px solid $primaryBGColor;
@@ -105,3 +102,4 @@ main {
 		padding-bottom: 5%;
 	}
 }
+
