@@ -234,8 +234,6 @@ body {
   min-height: 100vh;
   background-position: 55% 30%;
   background-color: #393939;
-  position: relative;
-  z-index: -10;
 }
 
 button,
@@ -272,12 +270,6 @@ a:visited:focus {
 @media (max-width: 1000px) {
   main .mainContainer {
     width: 90vw;
-    margin: 0 auto !important;
-  }
-}
-@media (max-width: 500px) {
-  main {
-    width: 100vw;
     margin: 0 auto !important;
   }
 }
@@ -417,6 +409,7 @@ main .posterContainer {
   margin-top: 3%;
 }
 main .posterContainer img {
+  max-width: 90%;
   border-radius: 20px;
   border: solid 3px #262626;
   height: 500px;
