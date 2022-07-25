@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>The Great Ghibli Gathering</title>
 
-		<!-- STYLESHEET -->
-		<link rel="stylesheet" href="./styles/style.css" />
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>The Great Ghibli Gathering</title>
 
-		<!-- FONTS -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- Defunct Josefin Sans
+	<!-- STYLESHEET -->
+	<link rel="stylesheet" href="./styles/style.css" />
+
+	<!-- FONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+	<!-- Defunct Josefin Sans
         <link rel=“preconnect” href=“https://fonts.googleapis.com”>
     <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
     <link href=“https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap” rel=“stylesheet”> -->
-	</head>
+</head>
 
-	<body>
-		<!-- raindrop img for background -->
-		<!-- <img src="./assets/raindrops.png" alt="a few raindrops falling over the totoro background" class="raindrops"> -->
-		<!-- !HEADER -->
-		<header>
-			<div class="wrapper">
-				<!-- *Logo -->
-				<img
-					src="./assets/logo-final.png"
-					alt="The Studio Ghibli logo."
-					class="logo-final"
-				/>
+<body>
+	<!-- !HEADER -->
+	<header>
+		<div class="wrapper">
+			<!-- *Logo -->
+			<img src="./assets/logo-final.png" alt="The Studio Ghibli logo." class="logo-final" />
 
-				<!-- *Nav -->
-				<!-- <nav>
+			<!-- *Nav -->
+			<!-- <nav>
                     <ul>
                         <li>
                             <a href="#"> Home </a>
@@ -51,73 +43,69 @@
                         </li>
                     </ul>
                 </nav> -->
+		</div>
+		<!-- END wrapper -->
+	</header>
+
+	<!-- !MAIN -->
+	<main>
+		<div class="wrapper mainContainer">
+			<h1>The Great Ghibli Gathering</h1>
+
+			<div class="wrapper selectionContainer">
+				<select name="movieList" id="movieList" class="movieList">
+					<!-- <option value="first">testing</option> -->
+				</select>
+
+				<button id="randomButton" class="randomButton">
+					Or choose a random movie!
+				</button>
 			</div>
 			<!-- END wrapper -->
-		</header>
-
-		<!-- !MAIN -->
-		<main>
-			<div class="wrapper mainContainer">
-				<h1>The Great Ghibli Gathering</h1>
-
-				<div class="wrapper selectionContainer">
-					<select name="movieList" id="movieList" class="movieList">
-						<!-- <option value="first">testing</option> -->
-					</select>
-
-					<button id="randomButton" class="randomButton">
-						Or choose a random movie!
-					</button>
+			<div class="appendContainer">
+				<div class="posterContainer">
+					<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/npOnzAbLh6VOIu3naU5QaEcTepo.jpg"
+						alt="Castle in the Sky poster." />
 				</div>
-				<!-- END wrapper -->
-				<div class="appendContainer">
-					<div class="posterContainer">
-						<img
-							src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/npOnzAbLh6VOIu3naU5QaEcTepo.jpg"
-							alt="Castle in the Sky poster."
-						/>
-					</div>
 
-					<div class="titleContainer">
-						<h2>Castle In The Sky</h2>
-					</div>
+				<div class="titleContainer">
+					<h2>Castle In The Sky</h2>
+				</div>
 
-					<div class="descriptionContainer">
-						<p>
-							The orphan Sheeta inherited a mysterious crystal
-							that links her to the mythical sky-kingdom of
-							Laputa. With the help of resourceful Pazu and a
-							rollicking band of sky pirates, she makes her way to
-							the ruins of the once-great civilization. Sheeta and
-							Pazu must outwit the evil Muska, who plans to use
-							Laputa's science to make himself ruler of the world.
-						</p>
-					</div>
+				<div class="descriptionContainer">
+					<p>
+						The orphan Sheeta inherited a mysterious crystal
+						that links her to the mythical sky-kingdom of
+						Laputa. With the help of resourceful Pazu and a
+						rollicking band of sky pirates, she makes her way to
+						the ruins of the once-great civilization. Sheeta and
+						Pazu must outwit the evil Muska, who plans to use
+						Laputa's science to make himself ruler of the world.
+					</p>
 				</div>
 			</div>
-			<!-- END wrapper mainContainer-->
-		</main>
+		</div>
+		<!-- END wrapper mainContainer-->
+	</main>
 
-		<!-- <div class="backgroundImage">
+	<!-- <div class="backgroundImage">
         <img src="./assets/background.png" alt="">
     </div> -->
 
-		<!-- !FOOTER -->
-		<footer>
-			<p>Created at Juno College by Sarah and Sadie ✨</p>
-		</footer>
+	<!-- !FOOTER -->
+	<footer>
+		<p>Created at Juno College by Sarah and Sadie ✨</p>
+	</footer>
 
-		<!-- !JS -->
-		<!-- *Our Script -->
-		<script src="./script.js"></script>
+	<!-- !JS -->
+	<!-- *Our Script -->
+	<script src="./script.js"></script>
 
-		<!-- *FontAwesome -->
-		<script
-			src="https://kit.fontawesome.com/fa84358317.js"
-			crossorigin="anonymous"
-		></script>
+	<!-- *FontAwesome -->
+	<script src="https://kit.fontawesome.com/fa84358317.js" crossorigin="anonymous"></script>
 
-		<!-- *Script for a plugin we found that lets you do element queries -->
-		<!-- <script src="EQCSS.js"></script> -->
-	</body>
+	<!-- *Script for a plugin we found that lets you do element queries -->
+	<!-- <script src="EQCSS.js"></script> -->
+</body>
+
 </html>
