@@ -234,9 +234,39 @@ body {
   min-height: 100vh;
   background-position: 55% 30%;
   background-color: #393939;
+  position: relative;
+  z-index: -10;
 }
 body .raindrops {
-  z-index: 10000;
+  position: absolute;
+  left: 422px;
+  z-index: 0;
+  -webkit-animation: slide-down 3s forwards;
+          animation: slide-down 3s forwards;
+}
+@-webkit-keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 button,
@@ -287,18 +317,6 @@ header .logo-final {
   -webkit-animation: slide-down 2s forwards;
           animation: slide-down 2s forwards;
 }
-@-webkit-keyframes slide-down {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -327,6 +345,7 @@ main .mainContainer {
           flex-direction: column;
   margin-top: 30px;
   margin-left: 50px;
+  z-index: 30;
   -webkit-animation: slide-down 1s forwards;
           animation: slide-down 1s forwards;
 }
@@ -411,7 +430,6 @@ main .posterContainer {
   margin-top: 3%;
 }
 main .posterContainer img {
-  max-width: 50%;
   border-radius: 20px;
   border: solid 3px #262626;
   height: 500px;
