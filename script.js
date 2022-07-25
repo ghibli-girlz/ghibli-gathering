@@ -38,7 +38,15 @@ app.getFilms = function () {
     // getting data from the api
     const url = new URL(app.apiUrl);
     fetch(url)
-        .then((apiData) => apiData.json())
+        .then((apiData) => {
+
+            if (apiData.ok) {
+                return apiData.json();
+            } else {
+                alert("The API is broken! Not our fault! Go watch Spiderman or something.");
+            }
+            // apiData.json()
+        })
         .then((jsonData) => {
             // console.log(jsonData);
             // declare dropdown to be appended to later
