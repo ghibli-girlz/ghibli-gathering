@@ -22,11 +22,10 @@ const app = {};
 app.apiUrl = "https://ghibliapi.herokuapp.com/films";
 
 const dropdown = document.querySelector("#movieList");
-// ❓ why doesnt this work now? weird
 
 // *Define app init
 app.init = () => {
-    app.getFilms();
+	app.getFilms();
 };
 
 // Make API call
@@ -35,140 +34,123 @@ const url = new URL(app.apiUrl);
 
 // !POPULATE DROPDOWN
 app.getFilms = function () {
-    // getting data from the api
-    const url = new URL(app.apiUrl);
-    fetch(url)
-        .then((apiData) => {
+	// getting data from the api
+	const url = new URL(app.apiUrl);
+	fetch(url)
+		.then((apiData) => {
+			if (apiData.ok) {
+				return apiData.json();
+			} else {
+				alert(
+					"The API is broken! Not our fault! Go watch Spiderman or something."
+				);
+			}
+		})
+		.then((jsonData) => {
+			// declare dropdown to be appended to later
+			const dropdown = document.querySelector("#movieList");
 
-            if (apiData.ok) {
-                return apiData.json();
-            } else {
-                alert("The API is broken! Not our fault! Go watch Spiderman or something.");
-            }
-            // apiData.json()
-        })
-        .then((jsonData) => {
-            // console.log(jsonData);
-            // declare dropdown to be appended to later
-            const dropdown = document.querySelector("#movieList");
+			// *forEach to, for each movie...
+			jsonData.forEach((movie) => {
+				// *...declare title variable to print to dropdown
+				let movieTitle = movie.title;
 
-            // *forEach to, for each movie...
+				// *append the movie title to the dropdown
+				const htmlToAppend = document.createElement("option");
+				htmlToAppend.innerText = `${movieTitle}`;
+				htmlToAppend.value = `${movieTitle}`;
 
-            jsonData.forEach((movie) => {
-                // *...declare title variable to print to dropdown
-                let movieTitle = movie.title;
+				dropdown.append(htmlToAppend);
+			});
 
-                // *append the movie title to the dropdown
-                const htmlToAppend = document.createElement("option");
-                htmlToAppend.innerText = `${movieTitle}`;
-                htmlToAppend.value = `${movieTitle}`;
+			// *event listener for random button w/ callback
+			const randomButton = document.querySelector("#randomButton");
+			randomButton.addEventListener("click", function () {
+				app.printRandom(jsonData);
+			});
 
-                dropdown.append(htmlToAppend);
+			// !EVENT LISTENER DROPDOWN
+			// *add event listener to dropdown menu change
+			document
+				.querySelector("#movieList")
+				.addEventListener("change", function () {
+					// *Declaring variables for html containers
+					const poster = document.querySelector(".posterContainer");
+					const title = document.querySelector(".titleContainer");
+					const description = document.querySelector(
+						".descriptionContainer"
+					);
 
+					// *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+					poster.innerHTML = "";
+					title.innerHTML = "";
+					description.innerHTML = "";
 
-            });
-
-            const randomButton = document.querySelector("#randomButton")
-            randomButton.addEventListener("click", function (event) {
-                event.preventDefault()
-                app.printRandom(jsonData);
-            });
-
-            // !EVENT LISTENER DROPDOWN
-            // *add event listener to dropdown menu change
-            document
-                .querySelector("#movieList")
-                .addEventListener("change", function () {
-                    const userSelection = this.value;
-
-                    // *Declaring variables for html containers
-                    const poster = document.querySelector(".posterContainer");
-
-                    const title = document.querySelector(".titleContainer");
-
-                    const description = document.querySelector(
-                        ".descriptionContainer"
-                    );
-
-                    // *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
-                    poster.innerHTML = "";
-                    title.innerHTML = "";
-                    description.innerHTML = "";
-
-                    // *call moviePrint
-                    app.moviePrint(jsonData);
-                });
-
-
-        });
+					// *call moviePrint
+					app.moviePrint(jsonData);
+				});
+		});
 };
 
 // !RANDOMPRINT
-
 app.printRandom = (movieData) => {
-    const randomSelectedMovie = movieData[Math.floor(Math.random() * movieData.length)];
+	// *Randomizer function
+	const randomSelectedMovie =
+		movieData[Math.floor(Math.random() * movieData.length)];
 
-    // *Declaring variables for html containers
-    const poster = document.querySelector(".posterContainer");
+	// *Declaring variables for html containers
+	// *editor's note -- we define this variables in each function which is Not dry but when we defined them as global variables they weren't accessible from inside the functions so we got Joe's blessing to just do it this way B)
+	const poster = document.querySelector(".posterContainer");
+	const title = document.querySelector(".titleContainer");
+	const description = document.querySelector(".descriptionContainer");
 
-    const title = document.querySelector(".titleContainer");
+	// *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
+	poster.innerHTML = "";
+	title.innerHTML = "";
+	description.innerHTML = "";
 
-    const description = document.querySelector(".descriptionContainer");
+	// *defining randomizer variables
+	let moviePoster = randomSelectedMovie.image;
+	let movieTitle = randomSelectedMovie.title;
+	let movieDescription = randomSelectedMovie.description;
 
-    // *clear previous entry (so when you choose a new movie the previous movie's info doesn't stay there)
-    poster.innerHTML = "";
-    title.innerHTML = "";
-    description.innerHTML = "";
-
-    // defining randomizer variables
-    let moviePoster = randomSelectedMovie.image;
-    let movieTitle = randomSelectedMovie.title;
-    let movieDescription = randomSelectedMovie.description;
-
-    // printing randomizer to the page
-    poster.innerHTML = `<img src="${moviePoster}" alt="The poster for: ${movieTitle}">`
-    title.innerHTML = `<h2>${movieTitle}<h2>`
-    description.innerHTML = `<p>${movieDescription}</p>`
-
-}
+	// *printing randomizer results to the page
+	poster.innerHTML = `<img src="${moviePoster}" alt="The poster for: ${movieTitle}">`;
+	title.innerHTML = `<h2>${movieTitle}<h2>`;
+	description.innerHTML = `<p>${movieDescription}</p>`;
+};
 
 // !MOVIEPRINT
 app.moviePrint = (movieData) => {
-    const selection = document.querySelector("#movieList").value;
-    // console.log(selection);
-    movieData.forEach((movie) => {
-        if (movie.title === selection) {
-            // *Declare Poster
-            let moviePoster = movie.image;
-            console.log(moviePoster);
+	const selection = document.querySelector("#movieList").value;
+	movieData.forEach((movie) => {
+		if (movie.title === selection) {
+			// *Declare Poster
+			let moviePoster = movie.image;
+			console.log(moviePoster);
 
-            // *Declare Title
-            let movieTitle = movie.title;
-            console.log(movieTitle);
+			// *Declare Title
+			let movieTitle = movie.title;
+			console.log(movieTitle);
 
-            // *Declare Description
-            let movieDescription = movie.description;
-            console.log(movieDescription);
+			// *Declare Description
+			let movieDescription = movie.description;
+			console.log(movieDescription);
 
-            // *create innerhtml with matching css to be appended with variables for movie info
-            const poster = document.querySelector(".posterContainer");
+			// *Declaring variables for html containers
+			// * Editor's note -- see above
+			const poster = document.querySelector(".posterContainer");
+			const title = document.querySelector(".titleContainer");
+			const description = document.querySelector(".descriptionContainer");
 
-            const title = document.querySelector(".titleContainer");
-
-            const description = document.querySelector(
-                ".descriptionContainer"
-            );
-
-            poster.innerHTML = `<img src="${moviePoster}" alt="The poster for: ${movieTitle}">`
-            title.innerHTML = `<h2>${movieTitle}<h2>`
-            description.innerHTML = `<p>${movieDescription}</p>`
-
-            // *append that to the page
-        }
-    });
+			// *create innerhtml with matching css to be appended with variables for movie info
+			poster.innerHTML = `<img src="${moviePoster}" alt="The poster for: ${movieTitle}">`;
+			title.innerHTML = `<h2>${movieTitle}<h2>`;
+			description.innerHTML = `<p>${movieDescription}</p>`;
+		}
+	});
 };
 
-// *run function to append movie info (poster, title, descrption)
-
-// *call app.init
+// !call app.init
 app.init();
+
